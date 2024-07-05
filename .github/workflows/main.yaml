@@ -17,5 +17,6 @@ jobs:
       - name: Create a Release APK
         uses: ncipollo/release-action@v1
         with:
+          fetch-depth: 0
           artifacts: "build/app/outputs/apk/debug/*.apk"
           token: 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
