@@ -15,11 +15,11 @@ jobs:
         with:
           flutter-version: "3.22.2"
       - run: flutter pub get
-      - run: flutter build apk --debug --split-per-abi
+      - run: flutter build apk --release --split-per-abi
       - name: Create a Release APK
         uses: ncipollo/release-action@v1
         with:
           artifacts: "build/app/outputs/flutter-apk/*.apk"
-          token: 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
+          token: ${{secrets.GITHUB_TOKEN}}
           commit: master
           tag: v1.0.${{github.run_number}}
